@@ -1,21 +1,25 @@
-const Storage = function (items) {
-  this.items = items;
+class Storage {
+  #items;
 
-  this.getItems = function () {
-    return this.items;
-  };
+  constructor(items) {
+    this.#items = items;
+  }
 
-  this.addItem = function (item) {
-    this.items.push(item);
-  };
+  getItems() {
+    return this.#items;
+  }
 
-  this.removeItem = function (item) {
-    const index = this.items.indexOf(item);
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+
+  removeItem(newItem) {
+    const index = this.#items.indexOf(newItem);
     if (index !== -1) {
-      this.items.splice(index, 1);
+      this.#items.splice(index, 1);
     }
-  };
-};
+  }
+}
 
 
 
